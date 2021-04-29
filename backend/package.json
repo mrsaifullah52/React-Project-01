@@ -1,0 +1,22 @@
+{
+  "name": "reactproject01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsaifullah52/React-Project-01.git"
+  },
+  "author": "Saif Ullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrsaifullah52/React-Project-01/issues"
+  },
+  "homepage": "https://github.com/mrsaifullah52/React-Project-01#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
