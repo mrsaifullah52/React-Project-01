@@ -5,7 +5,11 @@ const app = express();
 
 dotenv.config( {path: './config.env'} );
 
-require('./DB/conn.js');
+// mongodb
+require('./db/conn.js');
+// user schema(Model)
+const User = require('./model/userSchema');
+// Server Port
 const PORT = process.env.PORT;
 
 
