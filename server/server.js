@@ -1,5 +1,12 @@
+const dotenv=require('dotenv');
 const express = require('express');
 const app = express();
+
+
+dotenv.config( {path: './config.env'} );
+
+require('./DB/conn.js');
+const PORT = process.env.PORT;
 
 
 // middlerware
@@ -7,8 +14,6 @@ const middlerware=(req,res,next)=>{
   console.log("runnning middleware");
   next();
 }
-// middlerware();
-
 
 // default homepage
 app.get('/', middlerware, (req,res)=>{
@@ -17,6 +22,6 @@ app.get('/', middlerware, (req,res)=>{
 });
 
 // listening port
-app.listen(3000,()=>{
-  console.log("Listening port 3000");
+app.listen(PORT,()=>{
+  console.log(`Listening port ${PORT}`);
 });
