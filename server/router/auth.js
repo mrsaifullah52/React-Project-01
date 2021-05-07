@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const bcrypt = require('bcrypt');
 
 require('../db/conn');
 const User=require('../model/userSchema');
@@ -37,18 +37,19 @@ router.post("/register", async (req,res)=>{
 
 router.post("/login", async (req, res)=>{
   const {email, password}=req.body;
-  
-  const emailExist = await User.findOne({email: email.toLowerCase()});
-  const passExist = await User.findOne({password: password});
-  
-  if(emailExist && passExist){
-    res.json({email: email, password: password});
+  const userExist = await User.findOne({email: email.toLowerCase()});
+  if(userExist){
+    const isMatched = await bcrypt.compare(password, userExist.password);
+
+    if(isMatched){
+      res.json({email: email, password: password});
+    }else{
+      res.json({error: "Invalid Credientials!!"});
+    }
+    
   }else{
-    res.json({error: "User doesnt exist!!"});
+    res.json({error: "Invalid Credientials!!"});
   }
-
-
-
 });
 
 
