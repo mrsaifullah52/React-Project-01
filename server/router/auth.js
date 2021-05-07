@@ -27,8 +27,8 @@ router.post("/register", async (req,res)=>{
         if(userAdded){
           res.status(201).json({message: "User Registered Successfully!!"});
         }
-      }catch(error){
-        return res.status(422).json({Error: error});
+      }catch(err){
+        return res.status(422).json({Error: err+""});
       }
     }
   }
@@ -37,15 +37,11 @@ router.post("/register", async (req,res)=>{
 
 router.post("/login", async (req, res)=>{
   const {email, password}=req.body;
-  // converting email into lower case
-  // const email=lowerCaseEmail.toLowerCase();
-  const emailExist = await User.findOne({email: email});
+  
+  const emailExist = await User.findOne({email: email.toLowerCase()});
   const passExist = await User.findOne({password: password});
+  
   if(emailExist && passExist){
-    // user exist
-
-
-
     res.json({email: email, password: password});
   }else{
     res.json({error: "User doesnt exist!!"});
