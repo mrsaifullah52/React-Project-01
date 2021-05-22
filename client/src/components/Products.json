@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "BROOKE BOND SUPREME 95gm",
+    "price": 95,
+    "image": "https://static-01.daraz.pk/p/5c91d52e78895aff91a726f95d30a1f8.png_340x340q80.jpg_.webp"
+  },  {
+    "id": 2,
+    "name": "Rooh Afza - 800ML",
+    "price": 229,
+    "image": "https://static-01.daraz.pk/p/1ff605c1ddf6302f23399c689e547be8.jpg_340x340q80.jpg_.webp"
+  },  {
+    "id": 3,
+    "name": "Soya Supreme Cooking Oil Pouch 1x5",
+    "price": 1449,
+    "image": "https://static-01.daraz.pk/p/7b39b2521ac64a380bc85c8dbc4be2d6.jpg_340x340q80.jpg_.webp"
+  }
+]

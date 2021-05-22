@@ -10,7 +10,7 @@ router.get("/",(req,res)=>{
   res.send("Hello from Home Page");
 });
 
-router.post("/register", async (req,res)=>{
+router.post("/signup", async (req,res)=>{
 
   const {name, email, phone, password, cpassword}= req.body;
 
@@ -36,7 +36,7 @@ router.post("/register", async (req,res)=>{
 });
 
 
-router.post("/login", async (req, res)=>{
+router.post("/signin", async (req, res)=>{
   let token;
   const {email, password}=req.body;
   const userExist = await User.findOne({email: email.toLowerCase()});
